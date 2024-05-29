@@ -14,7 +14,7 @@ Session(app)
 
 db = SQL("sqlite:///database.db")
 
-openai.api_key = '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'
+openai.api_key = 'sk-your_actual_api_key'
 
 @app.after_request
 def after_request(response):

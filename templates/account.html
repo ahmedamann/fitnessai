@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Settings
+{% endblock %}
+
+{% block main %}
+
+
+    <h1>Account Settings</h1>
+
+    <div>
+        <p>Your username: <span class="info"> {{ username }}</span></p>
+
+    </div>
+
+    <div class="mb-4">
+        <h3 >Change password</h3>
+    </div>
+
+
+    <form action="/account" class="mb-3" method="post" value="form">
+        <input autocomplete="off" class="form-control mx-auto w-auto mb-3" id="password" name="old_password" placeholder="Current Password" type="password" required>
+
+        <input autocomplete="off" class="form-control mx-auto w-auto mb-3" id="password" name="new_password" placeholder="New Password" type="password" required>
+
+        <input class="form-control mx-auto w-auto mb-2" id="verifypassword" name="verify_password" placeholder="Verify New Password" type="password" required>
+
+        <button class="btn btn-primary" type="submit">Confirm</button>
+    </form>
+
+    {% if rows.height and rows.weight and rows.age %}
+
+    <h3>Edit Information</h3>
+
+    <form action="/account" class="mb-3" method="post" value="form2">
+        <label for="age">Current age: <span class="info">{{ age }}</span></label>
+        <input class="form-control mx-auto w-auto mb-3" name="age" placeholder="Enter new age." type="number">
+
+        <label for="height">Current height: <span class="info">{{ height }} cm</span></label>
+        <input class="form-control mx-auto w-auto mb-3" name="height" placeholder="Enter new height (cm)" type="number">
+
+        <label for="weight">Current weight: <span class="info">{{ weight }} kg</span></label>
+        <input class="form-control mx-auto w-auto mb-2" name="weight" placeholder="Enter new weight (kg)" type="number">
+
+        <button class="btn btn-primary" type="submit">Save</button>
+    </form>
+
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Getting started
+{% endblock %}
+
+{% block main %}
+    <div>
+        <h1>
+            Welcome, {{ username }}!
+        </h1>
+        <p>
+            Please give us some information by filling the form below!
+        </p>
+    </div>
+
+    <div>
+        <form action="/new" method="post">
+
+            <div class="mb-3 center">
+                <select name="gender" class="form-select mx-auto w-auto" required>
+                    <option selected disabled>Gender</option>
+                    <option>Male</option>
+                    <option>Female</option>
+                </select>
+            </div>
+
+            <div class="mb-3" >
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="age" name="age" placeholder="Age" type="number" min="10" max="100" required>
+            </div>
+
+            <div class="mb-3">
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="height" name="height" placeholder="Height (cm)" type="number" required>
+            </div>
+            <div class="mb-3">
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="weight" name="weight" placeholder="Weight (kg)" type="number" required>
+            </div>
+
+            <button class="btn btn-primary" type="submit">Get Started!</button>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Meal Generator
+{% endblock %}
+
+
+{% block main %}
+    <h1>Meal Generator</h1>
+
+    <div class="center">
+        <p> Design your own meal for your specific goal.</p>
+    </div>
+
+    <form action="/meal" method="post">
+        <div class="mb-3">
+            <label for="goal" class="form-label">Fitness Goal*:</label>
+            <select class="form-select mx-auto w-auto" name="goal" required>
+                <option disabled selected>Choose</option>
+                <option value="Weight loss">Weight Loss</option>
+                <option value="Muscle gain">Muscle Gain</option>
+                <option value="Maintenance">Maintenance</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="meal_time" class="form-label">Meal time*:</label>
+            <select class="form-select mx-auto w-auto" name="meal_time">
+                <option disabled selected>Choose</option>
+                <option value="Breakfast">Breakfast</option>
+                <option value="Lunch">Lunch</option>
+                <option value="Dinner">Dinner</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="preferences" class="form-label">Dietary Preferences:</label>
+            <input type="text" class="form-control mx-auto w-auto" name="preferences" id="preferences" placeholder="ex: vegetarian">
+        </div>
+
+        <div class="mb-3">
+            <label for="allergies" class="form-label">Allergies:</label>
+            <input type="text" class="form-control mx-auto w-auto" name="allergies" id="allergies" placeholder="ex: peanuts">
+        </div>
+
+        <div class="mb-3">
+            <label for="include_foods" class="form-label">Include Foods:</label>
+            <input type="text" class="form-control mx-auto w-auto" name="include_foods" id="include_foods">
+        </div>
+
+        <div class="mb-3">
+            <label for="exclude_foods" class="form-label">Exclude Foods:</label>
+            <input type="text" class="form-control mx-auto w-auto" name="exclude_foods" id="exclude_foods">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Generate Meal</button>
+    </form>
+{% endblock %}

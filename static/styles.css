@@ -1,0 +1,134 @@
+.header{
+    background-color:#F5E8C7;
+    margin-bottom:2rem;
+    text-align:center;
+}
+
+.center{
+    text-aligned:center;
+}
+
+input::-webkit-outer-spin-button{
+    display: none;
+}
+
+
+input::-webkit-inner-spin-button {
+        display: none;
+}
+
+.logo img{
+    width:auto;
+    max-width:60px;
+    max-length:60px;
+    border-radius: 50%;
+}
+
+h1, h2, h3, h4{
+    font-weight:lighter;
+}
+
+table {
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+.meal-card-result {
+    width: auto;
+    height: auto;
+    margin: auto;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.meal-card-result table{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+
+.navbar-nav a {
+    color: #333;
+}
+
+.navbar-nav a:hover {
+    background-color: #f0f0f0;
+    color: #555;
+}
+
+#about, #bmi, #bmr, #contact {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-bmi{
+    width:160px;
+    height:160px;
+    padding:30px;
+    margin:auto;
+    border: 1px solid;
+}
+.bmi-category{
+    margin:auto;
+    width:20%;
+    border: 2px solid;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+.meal-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: auto;
+    padding: 22px;
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    background-color: #b9936c;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.meal-card tr{
+    background-color:#e6e2d3;
+}
+
+.meal-card:hover{
+    height: auto;
+    width: auto;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.meal-time {
+    font-weight: bold;
+}
+
+.meal-description-row {
+    display: none;
+}
+
+.meal-card:hover .meal-description-row {
+    display: table-row;
+}
+.info{
+    color:grey;
+}

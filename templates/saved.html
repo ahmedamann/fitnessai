@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Saved meals
+{% endblock %}
+
+
+{% block main %}
+
+<h1 class="text-center mb-4">Saved Meals</h1>
+
+<div>
+{% if meals %}
+    {% for meal in meals %}
+    <table class="meal-card">
+        <tr>
+            <th>{{ meal.mealtime }} Meal</th>
+        </tr>
+        <tr>
+            <td class="meal-time">For {{ meal.goal }}</td>
+        </tr>
+        {% for line in meal.meal_description.split('\n') %}
+            <tr class="meal-description-row">
+                <td>{{ line }}</td>
+            </tr>
+        {% endfor %}
+            <tr>
+                <td>
+                    <form action="/saved" method="post">
+                        <input type="hidden" name="meal_id" value="{{ meal.id }}">
+                        <button class="btn btn-danger">Remove meal</button>
+                    </form>
+                </td>
+            </tr>
+    </table>
+{% endfor %}
+
+{% else %}
+<p>You don't have any saved meals.</p>
+{% endif %}
+
+    <div class="mt-3">
+        <a href="/" class="btn btn-primary">Back to Home</a>
+    </div>
+</div>
+
+{% endblock %}
